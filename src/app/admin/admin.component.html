@@ -1,0 +1,28 @@
+<div class="" style="height:100vh;background-image: url(https://cdn.wallpapersafari.com/33/94/e8rDgu.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 mx-auto">
+                <h2 class="text-center mt-2 text-white">Admin Login</h2>
+                <form class="form-control" #adm = "ngForm" (ngSubmit)="adminSubmit(adm)">
+                    <div class="mb-3">
+                        <label for="Email" >Email</label>
+                        <input type="text" class="form-control" name="email" id="email" ngModel>
+                    </div>
+
+
+
+                    <div class="mb-3">
+                        <label for="psw" >Password</label>
+                        <input type="password" class="form-control" name="psw" id="psw" ngModel>
+                    </div>
+
+                    <div class="mb-3">
+                        <button class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>

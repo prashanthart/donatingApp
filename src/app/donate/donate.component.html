@@ -1,0 +1,47 @@
+<!-- donate.com.html -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mx-auto mt-3">
+
+            <form #ref = "ngForm" (ngSubmit)="formSubmit(ref)" class="form-control ">
+                <div class="form-group">
+                    <div class="form-group mt-2">
+
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" class="form-control" ngModel>
+                    </div>
+
+                    <div class="form-group mt-2">
+
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" class="form-control" ngModel>
+                    </div>
+
+                    <div class="form-group mt-2">
+
+                        <label for="ph">Phone Number</label>
+                        <input type="tel" name="ph" id="ph" class="form-control" ngModel>
+                    </div>
+
+                    <!-- drop down -->
+                    <div class="mt-2">
+                        <label for="donated">Donate options</label>
+                        <select #money="ngModel" name="donated" (blur)="validate(money.value)" (change)="validate(money.value)" id="donated" required class="form-select"   ngModel>
+                          <option value="" selected class="form-control">choose the option</option>
+                          <option *ngFor = "let o of items" class="form-control">{{o}}</option>
+                    </select>
+                      </div>
+                      <div class="mt-2" [class.d-none]="!donateMoney">
+                          <label for="amount">Amount</label>
+                          <input type="text" name="amount" id="amount" class="form-control" ngModel required>
+                      </div>
+                    <div class="mt-2">
+                        <button class="btn btn-primary">Donate</button>
+                    </div>
+
+                </div>
+        
+            </form>
+        </div>
+    </div>
+</div>
